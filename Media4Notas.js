@@ -1,22 +1,22 @@
-
-let Nota1 = prompt("Digite sua nota entre 0 e 10: ");
-let Nota2 = prompt("Digite sua nota entre 0 e 10: ");
-let Nota3 = prompt("Digite sua nota entre 0 e 10: ");
-let Nota4 = prompt("Digite sua nota entre 0 e 10: ");
-
-if(Nota1 <0 || Nota1 >10 || Nota2 <0 || Nota2 >10 || Nota3 <0 || Nota3 >10 || Nota4 <0 || Nota4 >10){
-    alert("Digite somente notas entre 0 e 10!");
-}else{
-    let Notas = Number(Nota1) + Number(Nota2) + Number(Nota3) + Number(Nota4);
-    let media = `Sua média é: ${Notas /4}`;
-    alert(media);
-
-    if(media >= 5){
-        alert("Parabens, você passou!");
-    }else{
-        alert("Você está reprovado!");
+let n1 = parseFloat(prompt("Digite a primeira nota: ") || 0);
+let n2 = parseFloat(prompt("Digite a segunda nota: ") || 0);
+let n3 = parseFloat(prompt("Digite a terceira nota: ") || 0);
+let n4 = parseFloat(prompt("Digite a quarta nota: ") || 0);
+if (
+    n1 < 0 || n2 < 0 || n3 < 0 || n4 < 0 ||
+    n1 > 10 || n2 > 10 || n3 > 10 || n4 > 10
+) {
+    alert("Digite somente números entre 0 e 10.");
+} else {
+    const media = (n1 + n2 + n3 + n4) / 4;
+    let resultado;
+    if (media < 5) {
+        resultado = "Reprovado";
+    } else if (media >= 6) {
+        resultado = "Aprovado";
+    } else {
+        resultado = "Em recuperação."
     }
+    const msg = `Você ficou com média ${media.toFixed(1)}. Resultado: ${resultado}`;
+    alert(msg);
 }
-
-
-
